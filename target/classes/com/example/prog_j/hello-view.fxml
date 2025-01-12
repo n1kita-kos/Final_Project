@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0"  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog_j.AppContrl">
+   <children>
+      <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="700.0" prefWidth="700.0" style="-fx-background-image: url('photo_5197497254292875577_y.jpg'); -fx-background-size: cover;">
+      </AnchorPane>
+
+      <AnchorPane layoutX="700.0" layoutY="0.0" prefHeight="700.0" prefWidth="700.0" style="-fx-background-image: url('photo_5197497254292875576_y.jpg'); -fx-background-size: cover;">
+      </AnchorPane>
+      <AnchorPane layoutX="50.0" layoutY="25.0" prefHeight="650.0" prefWidth="600.0" >
+         <children>
+            <Label layoutX="15.0" layoutY="15.0" prefHeight="20.0" prefWidth="150.0" text="Input File Settings:" style="-fx-font-weight: bold; -fx-text-fill:rgb(0, 0, 0);">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <CheckBox fx:id="InputArchivedCheckBox" layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#InputFileArchivedAction" prefHeight="20.0" prefWidth="120.0" text="File is Archived" style="-fx-font-weight: bold; -fx-text-fill:rgb(0, 0, 0);"/>
+            <CheckBox fx:id="InputEncryptedCheckBox" layoutX="15.0" layoutY="80.0" mnemonicParsing="false" onAction="#InputFileEncryptedAction" prefHeight="20.0" prefWidth="140.0" text="File is Encrypted" style="-fx-font-weight: bold; -fx-text-fill:rgb(0, 0, 0);" />
+            <ChoiceBox fx:id="InputFileTypeChoiceBox" layoutX="120.0" layoutY="110.0" prefHeight="25.0" prefWidth="110.0" style=" -fx-text-fill:rgb(0, 0, 0);" />
+            <Label layoutX="15.0" layoutY="115.0" prefHeight="20.0" prefWidth="120.0" text="Select File Type:" style="-fx-font-style: italic; -fx-text-fill:rgb(0, 0, 0);"/>
+            <TextField fx:id="InputFileNameTextField" layoutX="15.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter File Name" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+            <TextField fx:id="InputArchiveNameTextField" layoutX="15.0" layoutY="190.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Archive Name" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+            <TextField fx:id="InputKey" layoutX="15.0" layoutY="230.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Encryption Key" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+         </children>
+      </AnchorPane>
+      
+      <AnchorPane layoutX="750.0" layoutY="25.0" prefHeight="650.0" prefWidth="600.0" >
+         <children>
+            <Label layoutX="15.0" layoutY="15.0" prefHeight="20.0" prefWidth="150.0" text="Output File Settings:" style="-fx-font-weight: bold; -fx-text-fill:rgb(0, 0, 0);">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <CheckBox fx:id="OutputArchivedCheckBox" layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#OutputFileArchivedAction" prefHeight="20.0" prefWidth="120.0" text="File is Archived" style="-fx-font-weight: bold; -fx-text-fill:rgb(0, 0, 0);"/>
+            <CheckBox fx:id="OutputEncryptedCheckBox" layoutX="15.0" layoutY="80.0" mnemonicParsing="false" onAction="#OutputFileEncryptedAction" prefHeight="20.0" prefWidth="140.0" text="File is Encrypted" style="-fx-font-weight: bold; -fx-text-fill:rgb(0, 0, 0);"/>
+            <ChoiceBox fx:id="OutputFileTypeChoiceBox" layoutX="120.0" layoutY="110.0" prefHeight="25.0" prefWidth="110.0" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+            <Label layoutX="15.0" layoutY="115.0" prefHeight="20.0" prefWidth="120.0" text="Select File Type:" style="-fx-font-style: italic; -fx-text-fill:rgb(0, 0, 0);"/>
+            <TextField fx:id="OutputFileNameTextField" layoutX="15.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter File Name" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+            <TextField fx:id="OutputArchiveNameTextField" layoutX="15.0" layoutY="190.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Archive Name" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+            <TextField fx:id="OutputKey" layoutX="15.0" layoutY="230.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Encryption Key" style=" -fx-text-fill:rgb(0, 0, 0);"/>
+         </children>
+      </AnchorPane>
+      
+      <AnchorPane layoutX="500.0" layoutY="275.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color:rgba(255, 255, 255, 0.39); -fx-border-color:rgb(0, 0, 0); -fx-border-radius: 3; -fx-border-width: 2;">
+         <children>
+            <Button fx:id="ParseFileButton" layoutX="55.0" layoutY="100.0" mnemonicParsing="false" onAction="#ParseFile" prefHeight="25.0" prefWidth="70.0" text="Parse File" style="-fx-background-color:rgb(0, 130, 98); -fx-text-fill: white;" />
+            <Label layoutX="30.0" layoutY="5.0" prefHeight="20.0" prefWidth="120.0" text="Math Parser Settings:" style="-fx-font-weight: bold; -fx-text-fill:rgb(57, 165, 208);">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <RadioButton fx:id="ParseByLibRadioButton" layoutX="35.0" layoutY="25.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="85.0" text="Parse by lib" />
+            <RadioButton fx:id="ParseByStackRadioButton" layoutX="35.0" layoutY="45.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" selected="true" text="Parse by stack" />
+            <RadioButton fx:id="ParseByRegularRadioButton" layoutX="35.0" layoutY="65.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="110.0" text="Parse by regular" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

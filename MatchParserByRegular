@@ -95,17 +95,17 @@ public class MatchParserByRegular extends MatchParserBuilder {
         int lastEnd = 0;
 
         while (matcher.find()) {
-            result.append(line, lastEnd, matcher.start()); // Append non-matching text
+            result.append(line, lastEnd, matcher.start()); 
             String expression = matcher.group();
             try {
                 double evaluatedResult = calculate(expression);
                 result.append(evaluatedResult);
             } catch (Exception e) {
-                result.append(expression); // Keep original expression if an error occurs
+                result.append(expression);
             }
             lastEnd = matcher.end();
         }
-        result.append(line.substring(lastEnd)); // Append remaining text
+        result.append(line.substring(lastEnd));
         return result.toString();
     }
 
